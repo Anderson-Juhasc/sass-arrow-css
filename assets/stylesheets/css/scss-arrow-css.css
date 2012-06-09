@@ -1,0 +1,144 @@
+/*
+## SASS ARROWS
+Baseado em: https://github.com/klaascuvelier/less-css-arrow
+*/
+/* Test begin */
+/* line 140, ../sass/scss-arrow-css.scss */
+body {
+  padding: 5% 0;
+  width: 100%;
+}
+/* line 144, ../sass/scss-arrow-css.scss */
+body > div {
+  display: inline-block;
+  margin: 0 26px;
+  font-size: 12px;
+  padding: 20px;
+  width: 14%;
+}
+
+/* line 153, ../sass/scss-arrow-css.scss */
+.tooltip-top {
+  position: relative;
+  background: white;
+  border: 10px solid black;
+}
+/* line 10, ../sass/scss-arrow-css.scss */
+.tooltip-top:after, .tooltip-top:before {
+  bottom: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+/* line 32, ../sass/scss-arrow-css.scss */
+.tooltip-top:after {
+  border-bottom-color: black;
+  border-width: 20px;
+  left: 50%;
+  margin-left: -20px;
+}
+/* line 75, ../sass/scss-arrow-css.scss */
+.tooltip-top:before {
+  border-bottom-color: black;
+  border-width: 34px;
+  left: 50%;
+  margin-left: -34px;
+}
+
+/* line 157, ../sass/scss-arrow-css.scss */
+.tooltip-right {
+  position: relative;
+  background: white;
+  border: 10px solid black;
+}
+/* line 10, ../sass/scss-arrow-css.scss */
+.tooltip-right:after, .tooltip-right:before {
+  left: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+/* line 32, ../sass/scss-arrow-css.scss */
+.tooltip-right:after {
+  border-left-color: black;
+  border-width: 20px;
+  top: 50%;
+  margin-top: -20px;
+}
+/* line 75, ../sass/scss-arrow-css.scss */
+.tooltip-right:before {
+  border-left-color: black;
+  border-width: 34px;
+  top: 50%;
+  margin-top: -34px;
+}
+
+/* line 161, ../sass/scss-arrow-css.scss */
+.tooltip-bottom {
+  position: relative;
+  background: white;
+  border: 10px solid black;
+}
+/* line 10, ../sass/scss-arrow-css.scss */
+.tooltip-bottom:after, .tooltip-bottom:before {
+  top: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+/* line 32, ../sass/scss-arrow-css.scss */
+.tooltip-bottom:after {
+  border-top-color: black;
+  border-width: 20px;
+  left: 50%;
+  margin-left: -20px;
+}
+/* line 75, ../sass/scss-arrow-css.scss */
+.tooltip-bottom:before {
+  border-top-color: black;
+  border-width: 34px;
+  left: 50%;
+  margin-left: -34px;
+}
+
+/* line 165, ../sass/scss-arrow-css.scss */
+.tooltip-left {
+  position: relative;
+  background: white;
+  border: 10px solid black;
+}
+/* line 10, ../sass/scss-arrow-css.scss */
+.tooltip-left:after, .tooltip-left:before {
+  right: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+/* line 32, ../sass/scss-arrow-css.scss */
+.tooltip-left:after {
+  border-right-color: black;
+  border-width: 20px;
+  top: 50%;
+  margin-top: -20px;
+}
+/* line 75, ../sass/scss-arrow-css.scss */
+.tooltip-left:before {
+  border-right-color: black;
+  border-width: 34px;
+  top: 50%;
+  margin-top: -34px;
+}
+
+/* Test end */
