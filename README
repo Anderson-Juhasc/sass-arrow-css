@@ -1,0 +1,8 @@
+#About
+Sass Mixin to give css arrows (with given properties) on elements. (based on https://github.com/klaascuvelier/less-css-arrow)
+
+#Uso
+    .arrow {
+        @include sass-arrow(top, 20px, #ffffff, 10px, #000);
+    }
+
