@@ -31,16 +31,16 @@ Baseado em: https://github.com/klaascuvelier/less-css-arrow
 
     &:after {
         @if ($position1 == top) {
-            border-top-color: $border-color;
+            border-top-color: $color;
         }
         @elseif ($position1 == right) {
-            border-right-color: $border-color;
+            border-right-color: $color;
         }
         @elseif ($position1 == bottom) {
-            border-bottom-color: $border-color;
+            border-bottom-color: $color;
         }
         @elseif ($position1 == left) {
-            border-left-color: $border-color;
+            border-left-color: $color;
         }
 
         border-width: $size;
