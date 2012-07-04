@@ -1,24 +1,18 @@
 /*
-## SASS ARROWS
-Baseado em: https://github.com/klaascuvelier/less-css-arrow
+## SCSS ARROWS
 */
 @mixin sass-arrow-create($size, $color, $border-width, $border-color, $position1, $value1, $position2, $value2) {
+    $arrayPosition: "top", "right", "bottom", "left";
     position: relative;
     background: $color;
     border: $border-width solid $border-color;
 
     &:after, &:before {
-        @if ($position1 == top) {
-            top: $value1;
-        }
-        @elseif ($position1 == right) {
-            right: $value1;
-        }
-        @elseif ($position1 == bottom) {
-            bottom: $value1;
-        }
-        @elseif ($position1 == left) {
-            left: $value1;
+
+        @each $prefix in $arrayPosition {
+            @if ( $prefix == $position1 ) {
+                #{$prefix}: $value1;
+            }
         }
 
         border: solid transparent;
@@ -27,92 +21,55 @@ Baseado em: https://github.com/klaascuvelier/less-css-arrow
         width: 0;
         position: absolute;
         pointer-events: none;
+
     }
 
     &:after {
-        @if ($position1 == top) {
-            border-top-color: $color;
-        }
-        @elseif ($position1 == right) {
-            border-right-color: $color;
-        }
-        @elseif ($position1 == bottom) {
-            border-bottom-color: $color;
-        }
-        @elseif ($position1 == left) {
-            border-left-color: $color;
+
+        @each $prefix in $arrayPosition {
+            @if ( $prefix == $position1 ) {
+                border-#{$prefix}-color: $color;
+            }
         }
 
         border-width: $size;
 
-        @if ($position2 == top) {
-            top: $value2;
-        }
-        @elseif ($position2 == right) {
-            right: $value2;
-        }
-        @elseif ($position2 == bottom) {
-            bottom: $value2;
-        }
-        @elseif ($position2 == left) {
-            left: $value2;
+        @each $prefix in $arrayPosition {
+            @if ( $prefix == $position2 ) {
+                #{$prefix}: $value2;
+            }
         }
 
-        @if ($position2 == top) {
-            margin-top: 0px - $size;
+        @each $prefix in $arrayPosition {
+            @if ( $prefix == $position2 ) {
+                margin-#{$prefix}: 0px - $size;
+            }
         }
-        @elseif ($position2 == right) {
-            margin-right: 0px - $size;
-        }
-        @elseif ($position2 == bottom) {
-            margin-bottom: 0px - $size;
-        }
-        @elseif ($position2 == left) {
-            margin-left: 0px - $size;
-        }
+
     }
 
     &:before {
-        @if ($position1 == top) {
-            border-top-color: $border-color;
-        }
-        @elseif ($position1 == right) {
-            border-right-color: $border-color;
-        }
-        @elseif ($position1 == bottom) {
-            border-bottom-color: $border-color;
-        }
-        @elseif ($position1 == left) {
-            border-left-color: $border-color;
+
+        @each $prefix in $arrayPosition {
+            @if ( $prefix == $position1 ) {
+                border-#{$prefix}-color: $border-color;
+            }
         }
 
         border-width: $size + round(1.41421356 * $border-width);
 
-        @if ($position2 == top) {
-            top: $value2;
-        }
-        @elseif ($position2 == right) {
-            right: $value2;
-        }
-        @elseif ($position2 == bottom) {
-            bottom: $value2;
-        }
-        @elseif ($position2 == left) {
-            left: $value2;
+        @each $prefix in $arrayPosition {
+            @if ( $prefix == $position2 ) {
+                #{$prefix}: $value2;
+            }
         }
 
-        @if ($position2 == top) {
-            margin-top: 0px - ($size + round(1.41421356 * $border-width));
+        @each $prefix in $arrayPosition {
+            @if ( $prefix == $position2 ) {
+                margin-#{$prefix}: 0px - ($size + round(1.41421356 * $border-width));
+            }
         }
-        @elseif ($position2 == right) {
-            margin-right: 0px - ($size + round(1.41421356 * $border-width));
-        }
-        @elseif ($position2 == bottom) {
-            margin-bottom: 0px - ($size + round(1.41421356 * $border-width));
-        }
-        @elseif ($position2 == left) {
-            margin-left: 0px - ($size + round(1.41421356 * $border-width));
-        }
+
     }
 }
 
@@ -133,36 +90,5 @@ Baseado em: https://github.com/klaascuvelier/less-css-arrow
     @elseif ($position == left) {
         @include sass-arrow-create($size, $color, $border-width, $border-color, right, 100%, top, 50%);
     }
+
 }
-
-
-/* Test begin */
-body {
-    padding: 5% 0;
-    width: 100%;
-
-    > div {
-        display: inline-block;
-        margin: 0 26px;
-        font-size: 12px;
-        padding: 20px;
-        width: 14%;
-    }
-}
-
-.tooltip-top {
-    @include sass-arrow(top, 20px, #ffffff, 10px, #000);
-}
-
-.tooltip-right {
-    @include sass-arrow(right, 20px, #ffffff, 10px, #000);
-}
-
-.tooltip-bottom {
-    @include sass-arrow(bottom, 20px, #ffffff, 10px, #000);
-}
-
-.tooltip-left {
-    @include sass-arrow(left, 20px, #ffffff, 10px, #000);
-}
-/* Test end */
