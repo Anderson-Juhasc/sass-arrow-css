@@ -1,4 +1,15 @@
-// Scss Arrows
+// ==========================================================================
+// SASS ARROW CSS
+// by Anderson Juhasc
+// ==========================================================================
+
+
+// @mixin sass-arrow-each
+// ==========================================================================
+
+//
+// selecionador de propriedades
+//
 
 @mixin sass-arrow-each($prop, $cond, $value) {
     $arrayPosition: "top", "right", "bottom", "left";
@@ -16,8 +27,15 @@
             }
         }
     }
-
 }
+
+
+// @mixin sass-arrow-create
+// ==========================================================================
+
+//
+// cria arrow personalizada
+//
 
 @mixin sass-arrow-create($size, $color, $border-width, $border-color, $position1, $value1, $position2, $value2) {
     position: relative;
@@ -61,6 +79,16 @@
 
     }
 }
+
+
+// @mixin sass-arrow
+// ==========================================================================
+
+//
+// cria arrow padronizada para as posicoes top, right, bottom e left
+// modo de usar: sass-arrow(left, 12px, red, 1px, blue);
+// faca o teste
+//
 
 @mixin sass-arrow($position, $size, $color, $border-width, $border-color){
 
